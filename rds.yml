@@ -14,6 +14,7 @@ Resources:
 
     FinalProjectRDS:
         Type: AWS::RDS::DBInstance
+        DependsOn: FinalProjectDBSubnetGroup
         Properties: 
             AllocatedStorage: 10
             DBInstanceClass: db.t2.micro
