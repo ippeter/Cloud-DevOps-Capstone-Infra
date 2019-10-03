@@ -7,6 +7,7 @@ Resources:
         Type: AWS::RDS::DBSubnetGroup
         Properties: 
             DBSubnetGroupName: FinalProjectDBSubnetGroup
+            DBSubnetGroupDescription: FinalProjectDBSubnetGroup
             SubnetIds: 
                 - subnet-09a7c242cf65d471e
                 - subnet-00e5fd9c6218fadea
@@ -30,7 +31,7 @@ Resources:
 Outputs:
 
     RDSEndpoint:
-        Value: !GetAtt FinalProjectRDS.Endpoint
+        Value: !GetAtt FinalProjectRDS.Endpoint.Address
         Description: RDS Instance Endpoint
         Export:
             Name: FinalProjectRDSEndpoint
