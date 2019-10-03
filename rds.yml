@@ -31,6 +31,7 @@ Resources:
 
 Outputs:
 
+    # This is how one gets it: aws cloudformation describe-stacks --stack-name rds --query Stacks[0].Outputs[0].OutputValue
     RDSEndpoint:
         Value: !GetAtt FinalProjectRDS.Endpoint.Address
         Description: RDS Instance Endpoint
