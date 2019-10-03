@@ -22,8 +22,8 @@ Resources:
             DBName: pedro
             DBSubnetGroupName: FinalProjectDBSubnetGroup
             Engine: MySQL
-            MasterUsername: root
-            MasterUserPassword: Huawei#12
+            MasterUsername: admin
+            MasterUserPassword: ChangeMe12
             MultiAZ: false
             PubliclyAccessible: false
             VPCSecurityGroups: 
