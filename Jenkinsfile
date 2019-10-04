@@ -2,11 +2,11 @@ pipeline {
   agent any
   
   stages {
-    /*
+    
     stage('Create EKS Cluster') {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
-          sh 'eksctl create cluster --name capstonecluster --version 1.14 --nodegroup-name standard-workers --node-type t3.medium --nodes 1 --nodes-min 1 --nodes-max 2 --node-ami auto'
+          sh 'eksctl create cluster --name capstonecluster --version 1.14 --nodegroup-name standard-workers --node-type t3.medium --nodes 1 --nodes-min 1 --nodes-max 2 --node-ami auto --vpc-public-subnets=subnet-09a7c242cf65d471e,subnet-00e5fd9c6218fadea'
         }
       }
     }
@@ -26,7 +26,7 @@ pipeline {
         }
       }
     }
-    */
+    
     stage('Create RDS') {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
