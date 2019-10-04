@@ -1,4 +1,3 @@
-
 pipeline {
   agent any
   
@@ -32,6 +31,7 @@ pipeline {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
           sh 'aws cloudformation create-stack --stack-name rds --template-body file:///root/ekscluster/rds.yml --region us-west-2'
+        }          
       }
     }
       
@@ -39,6 +39,7 @@ pipeline {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
           sh 'aws cloudformation describe-stacks --stack-name rds --query Stacks[0].Outputs[0].OutputValue > /tmp/rds-endpoint.txt'
+        }
       }
     }      
     
