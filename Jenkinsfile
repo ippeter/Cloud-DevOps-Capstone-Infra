@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   stages {
-    
+    /*
     stage('Create EKS Cluster') {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
@@ -26,11 +26,11 @@ pipeline {
         }
       }
     }
-    
+    */
     stage('Create RDS') {
       steps {
         withAWS(region:'us-west-2', credentials:'aws-final') {
-          sh 'aws cloudformation create-stack --stack-name rds --template-body file:///root/ekscluster/rds.yml --region us-west-2'
+          sh 'aws cloudformation create-stack --stack-name rds --template-body file:///ekscluster/rds.yml --region us-west-2'
         }          
       }
     }
